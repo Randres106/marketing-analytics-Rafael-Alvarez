@@ -15,6 +15,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+from pathlib import Path
 
 st.set_page_config(page_title="Laboratorio Final — Starbucks Rewards", page_icon="☕", layout="wide")
 
@@ -26,7 +27,9 @@ FEATURES = ["recency_days", "frequency", "monetary", "email_open_rate", "tenure_
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/uplift_campaign.csv")
+    BASE_DIR = Path(__file__).resolve().parent
+    ruta_csv = BASE_DIR / "data" / "uplift_campaign.csv"
+    return pd.read_csv(ruta_csv)
 
 
 @st.cache_data
