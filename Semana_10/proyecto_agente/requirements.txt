@@ -1,7 +1,7 @@
+streamlit
 google-genai
 python-dotenv
-streamlit
-pandas
 numpy
+pandas
 scikit-learn
 openpyxl
